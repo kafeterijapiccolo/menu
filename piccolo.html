@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pica Bar - Meni</title>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+		<style>
+			body {
+				background: #111;
+				color: #fff;
+				font-family: Arial, sans-serif;
+			}
+			header {
+				text-align: center;
+				padding: 60px 20px;
+			}
+			header img {
+				width: 180px;
+				animation: fadeIn 2s ease-in-out;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.menu-card {
+				background: #1a1a1a;
+				border-radius: 15px;
+				padding: 20px;
+				transition: 0.3s ease;
+				height: 100%;
+			}
+			.menu-card:hover {
+				transform: translateY(-5px);
+				background: #222;
+			}
+			.price {
+				color: #f5c542;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<img src="logo.png" alt="Logo" />
+			<h1 class="mt-4">Karta Pića</h1>
+		</header>
+
+		<div class="container">
+			<!-- TOPLI NAPICI -->
+			<h2 class="mb-4">Topli napici</h2>
+			<div class="row g-3 mb-5">
+				<div class="col-12 col-md-6">
+					<div class="menu-card">
+						<h3>Espresso</h3>
+						<p class="price">150 RSD</p>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-6">
+					<div class="menu-card">
+						<h3>Cappuccino</h3>
+						<p class="price">220 RSD</p>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-6">
+					<div class="menu-card">
+						<h3>Latte</h3>
+						<p class="price">250 RSD</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- BEZALKOHOLNA -->
+			<h2 class="mb-4">Bezalkoholna pića</h2>
+			<div class="row g-3 mb-5">
+				<div class="col-12 col-md-6">
+					<div class="menu-card">
+						<h3>Coca-Cola</h3>
+						<p class="price">180 RSD</p>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-6">
+					<div class="menu-card">
+						<h3>Sok narandža</h3>
+						<p class="price">200 RSD</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- ALKOHOLNA -->
+			<h2 class="mb-4">Alkoholna pića</h2>
+			<div class="row g-3 mb-5">
+				<div class="col-12 col-md-6">
+					<div class="menu-card">
+						<h3>Pivo točeno</h3>
+						<p class="price">260 RSD</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const cards = document.querySelectorAll(".menu-card");
+				cards.forEach((card, index) => {
+					card.style.opacity = 0;
+					setTimeout(() => {
+						card.style.transition = "opacity 0.8s ease";
+						card.style.opacity = 1;
+					}, index * 150);
+				});
+			});
+		</script>
+	</body>
+</html>
